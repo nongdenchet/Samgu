@@ -6,15 +6,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="apidez.com.samgu.SplashActivity">
+    tools:context="apidez.com.samgu.activity.SplashActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <apidez.com.samgu.view.SamguLogoView
+        android:id="@+id/logo"
+        android:layout_width="226dp"
+        android:layout_height="75dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="@+id/activity_splash"
         app:layout_constraintLeft_toLeftOf="@+id/activity_splash"
         app:layout_constraintRight_toRightOf="@+id/activity_splash"
         app:layout_constraintTop_toTopOf="@+id/activity_splash"/>
-
 </android.support.constraint.ConstraintLayout>

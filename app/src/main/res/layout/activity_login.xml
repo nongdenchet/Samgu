@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_splash"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="apidez.com.samgu.activity.LoginActivity">
+
+    <ImageView
+        android:id="@+id/bgView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/logo"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background"
+        app:layout_constraintVertical_bias="1.0"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#90000000"/>
+
+    <ImageView
+        android:layout_width="264dp"
+        android:layout_height="83dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="160dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/ic_samgu"
+        app:layout_constraintVertical_bias="0.33"/>
+
+    <RelativeLayout
+        android:id="@+id/btnFacebookLogin"
+        style="@style/BlueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/divider"
+        android:layout_marginLeft="@dimen/medium_space"
+        android:layout_marginRight="@dimen/medium_space"
+        android:padding="@dimen/extra_small_space">
+
+        <ImageView
+            android:id="@+id/facebook"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_facebook"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_toEndOf="@+id/facebook"
+            android:layout_toRightOf="@+id/facebook"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/login_with_facebook"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnGoogleLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="4dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:background="@android:color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/or"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"/>
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:background="@android:color/white"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/btnGoogleLogin"
+        style="@style/RedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="56dp"
+        android:layout_marginLeft="@dimen/medium_space"
+        android:layout_marginRight="@dimen/medium_space"
+        android:padding="@dimen/extra_small_space">
+
+        <ImageView
+            android:id="@+id/google"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_google"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_toEndOf="@+id/google"
+            android:layout_toRightOf="@+id/google"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/login_with_google"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+</RelativeLayout>
