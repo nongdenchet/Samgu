@@ -22,5 +22,16 @@
             android:name=".activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
+        <activity
+            android:name=".activity.ListenMusicActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:label="Browse Music"
+            android:name=".activity.BrowseMusicActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 </manifest>

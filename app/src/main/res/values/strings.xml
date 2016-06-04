@@ -4,4 +4,8 @@
     <string name="login_with_facebook">Login with Facebook</string>
     <string name="login_with_google">Login with Google</string>
     <string name="or">OR</string>
+    <string name="listening">Listening...</string>
+    <string name="small_or">or</string>
+    <string name="browse_music">Browse music</string>
+    <string name="search">Search</string>
 </resources>

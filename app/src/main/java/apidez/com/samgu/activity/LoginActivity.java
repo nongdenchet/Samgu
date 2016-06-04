@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ImageView;
 
 import apidez.com.samgu.R;
@@ -35,8 +34,6 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
@@ -44,11 +41,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        btnFacebookLogin.setOnClickListener(v -> {
+        btnFacebookLogin.setOnClickListener(v -> startListenMusicActivity());
+        btnGoogleLogin.setOnClickListener(v -> startListenMusicActivity());
+    }
 
-        });
-        btnGoogleLogin.setOnClickListener(v -> {
-
-        });
+    private void startListenMusicActivity() {
+        startActivity(ListenMusicActivity.getIntent(this));
     }
 }
