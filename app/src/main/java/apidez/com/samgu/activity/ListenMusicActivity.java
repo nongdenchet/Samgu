@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,6 +29,7 @@ import rx.schedulers.Schedulers;
  * Created by nongdenchet on 6/4/16.
  */
 public class ListenMusicActivity extends AppCompatActivity {
+    private boolean musicFound = false;
 
     @Bind(R.id.ivCircle)
     CircleImageView ivCircle;
@@ -62,6 +65,11 @@ public class ListenMusicActivity extends AppCompatActivity {
 
     private void setUpListener() {
         tvBrowseMusic.setOnClickListener(v -> startActivity(BrowseMusicActivity.getIntent(this)));
+        tvResult.setOnClickListener(v -> {
+            if (musicFound) {
+                Log.d("Quan", "AAA");
+            }
+        });
     }
 
     private void runAnimation() {
@@ -82,7 +90,16 @@ public class ListenMusicActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        onMusicResume();
+    }
+
+    private void onMusicResume() {
+        musicFound = false;
         tvResult.setText(getString(R.string.listening));
+        new Handler().postDelayed(() -> {
+            tvResult.setText("Animals by Maroon 5\nclick to listen");
+            musicFound = true;
+        }, 3000);
     }
 
     private void createNewCircle() {

@@ -8,4 +8,5 @@
     <string name="small_or">or</string>
     <string name="browse_music">Browse music</string>
     <string name="search">Search</string>
+    <string name="no_songs_found">No songs found</string>
 </resources>
