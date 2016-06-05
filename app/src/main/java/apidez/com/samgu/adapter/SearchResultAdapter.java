@@ -5,6 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import org.greenrobot.eventbus.EventBus;
+
 import apidez.com.samgu.R;
 import apidez.com.samgu.databinding.SearchItemBinding;
 
@@ -37,9 +39,17 @@ public class SearchResultAdapter extends BaseRecyclerViewAdapter<String> {
 
         public void bind(String value) {
             binding.setValue(value);
-            binding.getRoot().setOnClickListener(v -> {
-            });
+            binding.getRoot().setOnClickListener(v ->
+                    EventBus.getDefault().post(new ItemEvent(value)));
             binding.executePendingBindings();
+        }
+    }
+
+    public static class ItemEvent {
+        public String value;
+
+        public ItemEvent(String value) {
+            this.value = value;
         }
     }
 }

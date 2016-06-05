@@ -21,6 +21,9 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 import apidez.com.samgu.R;
 import apidez.com.samgu.adapter.SearchResultAdapter;
 import apidez.com.samgu.databinding.ActivityBrowseMusicBinding;
@@ -34,6 +37,10 @@ import rx.schedulers.Schedulers;
  * Created by nongdenchet on 6/4/16.
  */
 public class BrowseMusicActivity extends AppCompatActivity {
+    public static final int PICK_MUSIC = 0;
+    public static final int CHOOSE_MUSIC = 1;
+    private static final String TYPE = "type";
+
     private boolean isSearchOpened = false;
     private MenuItem mSearchAction;
     private EditText edtSearch;
@@ -46,8 +53,10 @@ public class BrowseMusicActivity extends AppCompatActivity {
     @Bind(R.id.rvSearchResult)
     RecyclerView rvSearchResult;
 
-    public static Intent getIntent(Context context) {
-        return new Intent(context, BrowseMusicActivity.class);
+    public static Intent getIntent(Context context, int type) {
+        Intent intent = new Intent(context, BrowseMusicActivity.class);
+        intent.putExtra(TYPE, type);
+        return intent;
     }
 
     @Override
@@ -65,9 +74,16 @@ public class BrowseMusicActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        EventBus.getDefault().register(this);
         searchViewModel.bindSearchResult()
                 .subscribe(result -> {
                 }, Throwable::printStackTrace);
+    }
+
+    @Override
+    protected void onPause() {
+        EventBus.getDefault().unregister(this);
+        super.onPause();
     }
 
     private void initializeView() {
@@ -157,5 +173,17 @@ public class BrowseMusicActivity extends AppCompatActivity {
             }
         });
         edtSearch.requestFocus();
+    }
+
+    @Subscribe
+    public void onEvent(SearchResultAdapter.ItemEvent event) {
+        switch (getIntent().getIntExtra(TYPE, 0)) {
+            case PICK_MUSIC:
+                startActivity(SamguActivity.getIntent(this));
+                break;
+            case CHOOSE_MUSIC:
+                finish();
+                break;
+        }
     }
 }

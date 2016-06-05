@@ -10,7 +10,6 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -64,11 +63,10 @@ public class ListenMusicActivity extends AppCompatActivity {
     }
 
     private void setUpListener() {
-        tvBrowseMusic.setOnClickListener(v -> startActivity(BrowseMusicActivity.getIntent(this)));
+        tvBrowseMusic.setOnClickListener(v ->
+                startActivity(BrowseMusicActivity.getIntent(this, BrowseMusicActivity.PICK_MUSIC)));
         tvResult.setOnClickListener(v -> {
-            if (musicFound) {
-                Log.d("Quan", "AAA");
-            }
+            if (musicFound) startActivity(SamguActivity.getIntent(this));
         });
     }
 
