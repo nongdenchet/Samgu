@@ -64,20 +64,24 @@ public class BrowseMusicActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_browse_music);
         ButterKnife.bind(this);
+        bindViewModel();
+        initializeView();
+    }
+
+    private void bindViewModel() {
         searchViewModel = new SearchViewModel(
                 AndroidSchedulers.mainThread(),
                 Schedulers.computation());
         binding.setViewModel(searchViewModel);
-        initializeView();
+        searchViewModel.bindSearchResult()
+                .subscribe(result -> {
+                }, Throwable::printStackTrace);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         EventBus.getDefault().register(this);
-        searchViewModel.bindSearchResult()
-                .subscribe(result -> {
-                }, Throwable::printStackTrace);
     }
 
     @Override

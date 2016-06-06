@@ -4,7 +4,6 @@ import android.databinding.BaseObservable;
 import android.databinding.ObservableArrayList;
 import android.databinding.ObservableInt;
 import android.databinding.ObservableList;
-import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -18,7 +17,6 @@ import rx.subjects.BehaviorSubject;
 /**
  * Created by nongdenchet on 6/4/16.
  */
-
 public class SearchViewModel extends BaseObservable {
     private Scheduler observeOn, subsribeOn;
 
