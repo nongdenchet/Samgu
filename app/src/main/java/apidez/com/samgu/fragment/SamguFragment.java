@@ -2,6 +2,7 @@ package apidez.com.samgu.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -109,13 +110,12 @@ public class SamguFragment extends Fragment {
     private List<String> data() {
         List<String> data = new ArrayList<>();
         data.add("http://scontent-hkg3-1.xx.fbcdn.net/t31.0-8/13072819_1133555470022181_5019669804777413920_o.jpg");
-        data.add("http://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/13321822_1158555317522196_7640562441507537379_n.jpg?oh=7efa83418ccb5cb2526fc5e46cd2da19&oe=5809784C");
+        data.add("https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.0-9/15253571_1255569104513806_1694383344236438323_n.jpg?oh=c674b4a786507584893ad5e165ec5571&oe=58F1A03E");
         data.add("http://scontent-hkg3-1.xx.fbcdn.net/t31.0-8/12998383_1127949393916122_3155205815095903997_o.jpg");
-        data.add("http://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/10923448_932912170086513_3531739529355490344_n.jpg?oh=a2d4db88318c607ceecb92db72aa46b5&oe=57D085C0");
+        data.add("https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.0-9/15267945_738099653004497_6034502147966232251_n.jpg?oh=7cd77543cb39fc86798ee772d5880ab6&oe=58BD829E");
         data.add("http://scontent-hkg3-1.xx.fbcdn.net/t31.0-8/13062973_463324620540694_6650778368538652819_o.jpg");
-        data.add("http://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/11058793_479649545516177_8606396649784375837_n.jpg?oh=07112b7b9949f54d2ae887140721211c&oe=57DCBFF0");
-        data.add("http://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-0/p206x206/12193334_564421750372289_3396625326039441791_n.jpg?oh=dc6919a3e3836581c46fef66c570b464&oe=580BAABD");
-        data.add("http://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/11037472_477641842383614_6878994719197104225_n.jpg?oh=84ff61062240e842c66a15880414d9ab&oe=580900E3");
+        data.add("https://scontent.fsgn2-2.fna.fbcdn.net/t31.0-8/14102954_655203127977711_346605723006854355_o.jpg");
+        data.add("https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.0-9/12038031_1504317549860999_6722477539523468950_n.jpg?oh=90bc47661df8d88ccc8e685b8ba446a0&oe=58C0A17F");
         data.add("http://scontent-hkg3-1.xx.fbcdn.net/t31.0-8/11000654_469380153209783_6363118670586989285_o.jpg");
         return data;
     }
@@ -126,6 +126,7 @@ public class SamguFragment extends Fragment {
             super(context, resource);
         }
 
+        @NonNull
         @Override
         public View getView(int position, final View contentView, ViewGroup parent) {
             ImageView image = (ImageView) contentView.findViewById(R.id.image);

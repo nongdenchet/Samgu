@@ -77,12 +77,12 @@ public class FriendListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public List<FriendListAdapter.Friend> friends() {
         List<FriendListAdapter.Friend> friends = new ArrayList<>();
         friends.add(new Friend("http://scontent-hkg3-1.xx.fbcdn.net/t31.0-8/13072819_1133555470022181_5019669804777413920_o.jpg", "Le Na", "Thấy ghét hà <3"));
-        friends.add(new Friend("http://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/13321822_1158555317522196_7640562441507537379_n.jpg?oh=7efa83418ccb5cb2526fc5e46cd2da19&oe=5809784C", "Miu Le", "Anh ơi"));
+        friends.add(new Friend("https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.0-9/15253571_1255569104513806_1694383344236438323_n.jpg?oh=c674b4a786507584893ad5e165ec5571&oe=58F1A03E", "Miu Le", "Anh ơi"));
         friends.add(new Friend("http://scontent-hkg3-1.xx.fbcdn.net/t31.0-8/12998383_1127949393916122_3155205815095903997_o.jpg", "Linh Nguyen", "<3 <3 <3"));
-        friends.add(new Friend("http://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/10923448_932912170086513_3531739529355490344_n.jpg?oh=a2d4db88318c607ceecb92db72aa46b5&oe=57D085C0", "My My", "Đang đi choy ak?"));
+        friends.add(new Friend("https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.0-9/12038031_1504317549860999_6722477539523468950_n.jpg?oh=90bc47661df8d88ccc8e685b8ba446a0&oe=58C0A17F", "Sếp Tùng", "Sky eiiiii!!!"));
         friends.add(new Friend("http://scontent-hkg3-1.xx.fbcdn.net/t31.0-8/13062973_463324620540694_6650778368538652819_o.jpg", "Sammy", "Ck có nhớ vk ko???"));
-        friends.add(new Friend("http://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/11058793_479649545516177_8606396649784375837_n.jpg?oh=07112b7b9949f54d2ae887140721211c&oe=57DCBFF0", "Linh Đan", "Giận rùi"));
-        friends.add(new Friend("http://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/11037472_477641842383614_6878994719197104225_n.jpg?oh=84ff61062240e842c66a15880414d9ab&oe=580900E3", "Annie", "Thích nhạc Maroon 5 nhứt"));
+        friends.add(new Friend("https://scontent.fsgn2-2.fna.fbcdn.net/t31.0-8/15325195_348739635493100_2324514124436964483_o.jpg", "Trinh", "Giận rùi"));
+        friends.add(new Friend("https://scontent.fsgn2-2.fna.fbcdn.net/t31.0-8/14102954_655203127977711_346605723006854355_o.jpg", "Trang", "Thích nhạc Maroon 5 nhứt"));
         friends.add(new Friend("http://scontent-hkg3-1.xx.fbcdn.net/t31.0-8/11000654_469380153209783_6363118670586989285_o.jpg", "Hà Lê", "Nhạc Jazz khó nghe lắm"));
         return friends;
     }

@@ -42,6 +42,7 @@ dependencies {
     compile 'com.android.support:cardview-v7:23.3.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha2'
 
+
     // Dagger
     provided 'com.google.dagger:dagger-compiler:2.2'
     compile 'com.google.dagger:dagger:2.2'
